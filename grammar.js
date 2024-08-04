@@ -5,9 +5,7 @@ module.exports = grammar({
 
   rules: {
     source_file: ($) => repeat($.line),
-
     line: ($) => seq($.keyword, "\n"),
-
     keyword: ($) => token("function"),
   },
 });
