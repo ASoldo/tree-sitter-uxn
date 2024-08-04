@@ -40,7 +40,9 @@
     {
       "scope": "source.uxn",
       "injection-regex": "^uxn$",
-      "highlight": "queries/highlight.scm"
+      "highlight": "queries/highlight.scm",
+      "locals": "queries/locals.scm",
+      "injections": "queries/injections.scm"
     }
   ]
 }

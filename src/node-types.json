@@ -1,6 +1,6 @@
 [
   {
-    "type": "block",
+    "type": "line",
     "named": true,
     "fields": {},
     "children": {
@@ -8,93 +8,7 @@
       "required": true,
       "types": [
         {
-          "type": "identifier",
-          "named": true
-        },
-        {
-          "type": "number",
-          "named": true
-        },
-        {
-          "type": "statement",
-          "named": true
-        },
-        {
-          "type": "string_literal",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "instruction",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "identifier",
-          "named": true
-        },
-        {
-          "type": "instruction_body",
-          "named": true
-        },
-        {
-          "type": "number",
-          "named": true
-        },
-        {
-          "type": "string_literal",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "instruction_body",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "end_instruction",
-          "named": true
-        },
-        {
-          "type": "opcode",
-          "named": true
-        },
-        {
-          "type": "operand",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "opcode",
-    "named": true,
-    "fields": {}
-  },
-  {
-    "type": "operand",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "identifier",
-          "named": true
-        },
-        {
-          "type": "number",
+          "type": "keyword",
           "named": true
         }
       ]
@@ -109,125 +23,18 @@
       "required": false,
       "types": [
         {
-          "type": "statement",
+          "type": "line",
           "named": true
         }
       ]
     }
   },
   {
-    "type": "statement",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": false,
-      "required": true,
-      "types": [
-        {
-          "type": "block",
-          "named": true
-        },
-        {
-          "type": "console_command",
-          "named": true
-        },
-        {
-          "type": "empty_line",
-          "named": true
-        },
-        {
-          "type": "instruction",
-          "named": true
-        },
-        {
-          "type": "label",
-          "named": true
-        },
-        {
-          "type": "string_literal",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "$",
+    "type": "\n",
     "named": false
   },
   {
-    "type": "&",
-    "named": false
-  },
-  {
-    "type": "(",
-    "named": false
-  },
-  {
-    "type": ")",
-    "named": false
-  },
-  {
-    "type": ".",
-    "named": false
-  },
-  {
-    "type": "/",
-    "named": false
-  },
-  {
-    "type": "@",
-    "named": false
-  },
-  {
-    "type": "BRK",
-    "named": false
-  },
-  {
-    "type": "DEO",
-    "named": false
-  },
-  {
-    "type": "INC2",
-    "named": false
-  },
-  {
-    "type": "JMP2r",
-    "named": false
-  },
-  {
-    "type": "LDAk",
-    "named": false
-  },
-  {
-    "type": "POP2",
-    "named": false
-  },
-  {
-    "type": "console_command",
-    "named": true
-  },
-  {
-    "type": "empty_line",
-    "named": true
-  },
-  {
-    "type": "end_instruction",
-    "named": true
-  },
-  {
-    "type": "identifier",
-    "named": true
-  },
-  {
-    "type": "label",
-    "named": true
-  },
-  {
-    "type": "number",
-    "named": true
-  },
-  {
-    "type": "string_literal",
+    "type": "keyword",
     "named": true
   }
 ]

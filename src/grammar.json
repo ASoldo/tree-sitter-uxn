@@ -5,303 +5,80 @@
       "type": "REPEAT",
       "content": {
         "type": "SYMBOL",
-        "name": "statement"
+        "name": "line"
       }
     },
-    "statement": {
-      "type": "CHOICE",
-      "members": [
-        {
-          "type": "SYMBOL",
-          "name": "console_command"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "label"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "instruction"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "block"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "string_literal"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "empty_line"
-        }
-      ]
-    },
-    "console_command": {
-      "type": "TOKEN",
-      "content": {
-        "type": "SEQ",
-        "members": [
-          {
-            "type": "STRING",
-            "value": "|"
-          },
-          {
-            "type": "PATTERN",
-            "value": "\\d+"
-          }
-        ]
-      }
-    },
-    "label": {
-      "type": "TOKEN",
-      "content": {
-        "type": "SEQ",
-        "members": [
-          {
-            "type": "STRING",
-            "value": "@"
-          },
-          {
-            "type": "PATTERN",
-            "value": "[\\w-]+"
-          }
-        ]
-      }
-    },
-    "instruction": {
+    "line": {
       "type": "SEQ",
       "members": [
         {
-          "type": "STRING",
-          "value": "@"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "identifier"
-        },
-        {
-          "type": "STRING",
-          "value": "("
-        },
-        {
-          "type": "REPEAT",
+          "type": "REPEAT1",
           "content": {
-            "type": "CHOICE",
-            "members": [
-              {
-                "type": "SYMBOL",
-                "name": "identifier"
-              },
-              {
-                "type": "SYMBOL",
-                "name": "string_literal"
-              },
-              {
-                "type": "SYMBOL",
-                "name": "number"
-              }
-            ]
-          }
-        },
-        {
-          "type": "STRING",
-          "value": ")"
-        },
-        {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "SYMBOL",
-              "name": "instruction_body"
-            },
-            {
-              "type": "BLANK"
-            }
-          ]
-        }
-      ]
-    },
-    "instruction_body": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "REPEAT",
-          "content": {
-            "type": "SEQ",
-            "members": [
-              {
-                "type": "SYMBOL",
-                "name": "opcode"
-              },
-              {
-                "type": "REPEAT",
-                "content": {
-                  "type": "SYMBOL",
-                  "name": "operand"
-                }
-              }
-            ]
-          }
-        },
-        {
-          "type": "SYMBOL",
-          "name": "end_instruction"
-        }
-      ]
-    },
-    "block": {
-      "type": "PREC_RIGHT",
-      "value": 0,
-      "content": {
-        "type": "SEQ",
-        "members": [
-          {
-            "type": "STRING",
-            "value": "@"
-          },
-          {
             "type": "SYMBOL",
-            "name": "identifier"
+            "name": "keyword"
+          }
+        },
+        {
+          "type": "STRING",
+          "value": "\n"
+        }
+      ]
+    },
+    "keyword": {
+      "type": "TOKEN",
+      "content": {
+        "type": "CHOICE",
+        "members": [
+          {
+            "type": "STRING",
+            "value": "|10"
           },
           {
             "type": "STRING",
-            "value": "("
-          },
-          {
-            "type": "REPEAT",
-            "content": {
-              "type": "CHOICE",
-              "members": [
-                {
-                  "type": "SYMBOL",
-                  "name": "identifier"
-                },
-                {
-                  "type": "SYMBOL",
-                  "name": "string_literal"
-                },
-                {
-                  "type": "SYMBOL",
-                  "name": "number"
-                }
-              ]
-            }
+            "value": "@Console"
           },
           {
             "type": "STRING",
-            "value": ")"
+            "value": "&vector"
           },
           {
-            "type": "REPEAT",
-            "content": {
-              "type": "SYMBOL",
-              "name": "statement"
-            }
+            "type": "STRING",
+            "value": "$2"
+          },
+          {
+            "type": "STRING",
+            "value": "&read"
+          },
+          {
+            "type": "STRING",
+            "value": "$1"
+          },
+          {
+            "type": "STRING",
+            "value": "&pad"
+          },
+          {
+            "type": "STRING",
+            "value": "$5"
+          },
+          {
+            "type": "STRING",
+            "value": "&write"
+          },
+          {
+            "type": "STRING",
+            "value": "$1"
+          },
+          {
+            "type": "STRING",
+            "value": "&error"
+          },
+          {
+            "type": "STRING",
+            "value": "$1"
           }
         ]
       }
-    },
-    "identifier": {
-      "type": "PATTERN",
-      "value": "[a-zA-Z_][a-zA-Z0-9_]*"
-    },
-    "opcode": {
-      "type": "CHOICE",
-      "members": [
-        {
-          "type": "STRING",
-          "value": "BRK"
-        },
-        {
-          "type": "STRING",
-          "value": "JMP2r"
-        },
-        {
-          "type": "STRING",
-          "value": "LDAk"
-        },
-        {
-          "type": "STRING",
-          "value": "DEO"
-        },
-        {
-          "type": "STRING",
-          "value": "INC2"
-        },
-        {
-          "type": "STRING",
-          "value": "POP2"
-        }
-      ]
-    },
-    "operand": {
-      "type": "CHOICE",
-      "members": [
-        {
-          "type": "SEQ",
-          "members": [
-            {
-              "type": "STRING",
-              "value": "&"
-            },
-            {
-              "type": "SYMBOL",
-              "name": "identifier"
-            }
-          ]
-        },
-        {
-          "type": "SEQ",
-          "members": [
-            {
-              "type": "STRING",
-              "value": "$"
-            },
-            {
-              "type": "SYMBOL",
-              "name": "number"
-            }
-          ]
-        },
-        {
-          "type": "SEQ",
-          "members": [
-            {
-              "type": "STRING",
-              "value": "."
-            },
-            {
-              "type": "SYMBOL",
-              "name": "identifier"
-            },
-            {
-              "type": "STRING",
-              "value": "/"
-            },
-            {
-              "type": "SYMBOL",
-              "name": "identifier"
-            }
-          ]
-        }
-      ]
-    },
-    "end_instruction": {
-      "type": "STRING",
-      "value": "->"
-    },
-    "number": {
-      "type": "PATTERN",
-      "value": "\\d+"
-    },
-    "string_literal": {
-      "type": "PATTERN",
-      "value": "\".*?\""
-    },
-    "empty_line": {
-      "type": "PATTERN",
-      "value": "\\s*[\\r\\n]"
     }
   },
   "extras": [
@@ -310,12 +87,7 @@
       "value": "\\s"
     }
   ],
-  "conflicts": [
-    [
-      "instruction",
-      "block"
-    ]
-  ],
+  "conflicts": [],
   "precedences": [],
   "externals": [],
   "inline": [],
