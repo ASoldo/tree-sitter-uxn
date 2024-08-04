@@ -1,1 +1,1 @@
-(keyword) @keyword
+(function) @function

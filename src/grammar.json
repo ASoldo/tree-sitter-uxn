@@ -12,11 +12,8 @@
       "type": "SEQ",
       "members": [
         {
-          "type": "REPEAT1",
-          "content": {
-            "type": "SYMBOL",
-            "name": "keyword"
-          }
+          "type": "SYMBOL",
+          "name": "keyword"
         },
         {
           "type": "STRING",
@@ -27,57 +24,8 @@
     "keyword": {
       "type": "TOKEN",
       "content": {
-        "type": "CHOICE",
-        "members": [
-          {
-            "type": "STRING",
-            "value": "|10"
-          },
-          {
-            "type": "STRING",
-            "value": "@Console"
-          },
-          {
-            "type": "STRING",
-            "value": "&vector"
-          },
-          {
-            "type": "STRING",
-            "value": "$2"
-          },
-          {
-            "type": "STRING",
-            "value": "&read"
-          },
-          {
-            "type": "STRING",
-            "value": "$1"
-          },
-          {
-            "type": "STRING",
-            "value": "&pad"
-          },
-          {
-            "type": "STRING",
-            "value": "$5"
-          },
-          {
-            "type": "STRING",
-            "value": "&write"
-          },
-          {
-            "type": "STRING",
-            "value": "$1"
-          },
-          {
-            "type": "STRING",
-            "value": "&error"
-          },
-          {
-            "type": "STRING",
-            "value": "$1"
-          }
-        ]
+        "type": "STRING",
+        "value": "function"
       }
     }
   },

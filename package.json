@@ -5,7 +5,7 @@
   "types": "bindings/node",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ASoldo/tree-sitter-uxn"
+    "url": "git+https://github.com/ASoldo/tree-sitter-uxn"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -43,10 +43,13 @@
   "tree-sitter": [
     {
       "scope": "source.uxn",
+      "file-types": [
+        "uxn"
+      ],
       "injection-regex": "^uxn$",
-      "highlight": "queries/highlight.scm",
-      "locals": "queries/locals.scm",
-      "injections": "queries/injections.scm"
+      "highlights": [
+        "queries/highlights.scm"
+      ]
     }
   ]
 }

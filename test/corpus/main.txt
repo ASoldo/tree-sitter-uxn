@@ -1,1 +1,9 @@
-|10 @Console &vector $2 &read $1 &pad $5 &write $1 &error $1
+==================
+Keywords Test
+==================
+
+function
+----------------
+(source_file
+  (line
+    (function)))
