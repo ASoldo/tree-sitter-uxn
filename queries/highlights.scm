@@ -1,8 +1,11 @@
 ; highlights.scm
-(comment) @comment
-(string_literal) @string
-(number) @number
+(console_command) @keyword
 (label) @label
+(instruction) @function
+(block) @function
+(identifier) @variable
 (opcode) @keyword
-(operand) @variable
-(identifier) @identifier
+(operand) @string
+(number) @number
+(string_literal) @string
+(empty_line) @punctuation.delimiter
