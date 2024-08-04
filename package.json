@@ -39,7 +39,8 @@
   "tree-sitter": [
     {
       "scope": "source.uxn",
-      "injection-regex": "^uxn$"
+      "injection-regex": "^uxn$",
+      "highlight": "queries/highlight.scm"
     }
   ]
 }

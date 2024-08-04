@@ -1,11 +1,10 @@
-; highlights.scm
-(console_command) @keyword
-(label) @label
+(console_command) @operator
+(label) @tag
 (instruction) @function
-(block) @function
+(block) @constructor
 (identifier) @variable
 (opcode) @keyword
-(operand) @string
+(operand) @property
 (number) @number
 (string_literal) @string
 (empty_line) @punctuation.delimiter
