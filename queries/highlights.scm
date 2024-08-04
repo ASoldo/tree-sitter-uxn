@@ -1,13 +1,1 @@
-; highlights.scm
-"|10" @keyword
-"@Console" @keyword
-"&vector" @keyword
-"$2" @keyword
-"&read" @keyword
-"$1" @keyword
-"&pad" @keyword
-"$5" @keyword
-"&write" @keyword
-"$1" @keyword
-"&error" @keyword
-"$1" @keyword
+(keyword) @keyword
