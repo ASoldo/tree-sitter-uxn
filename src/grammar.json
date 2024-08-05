@@ -79,6 +79,25 @@
         ]
       }
     },
+    "subroutine_call": {
+      "type": "TOKEN",
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "STRING",
+            "value": ";"
+          },
+          {
+            "type": "REPEAT1",
+            "content": {
+              "type": "PATTERN",
+              "value": "[a-zA-Z0-9_-]+"
+            }
+          }
+        ]
+      }
+    },
     "value": {
       "type": "TOKEN",
       "content": {

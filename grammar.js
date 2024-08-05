@@ -11,6 +11,7 @@ module.exports = grammar({
 
     keyword: ($) => token(seq("|", repeat1(/[a-zA-Z0-9_]+/))),
     function: ($) => token(seq("@", repeat1(/[a-zA-Z0-9_-]+/))),
+    subroutine_call: ($) => token(seq(";", repeat1(/[a-zA-Z0-9_-]+/))),
     value: ($) => token(seq("$", repeat1(/[a-zA-Z0-9_]+/))),
     identifier: ($) => token(seq("&", repeat1(/[a-zA-Z0-9_]+/))),
   },
