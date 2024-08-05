@@ -1,5 +1,15 @@
 [
   {
+    "type": "function",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "keyword",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "line",
     "named": true,
     "fields": {},
@@ -13,6 +23,10 @@
         },
         {
           "type": "keyword",
+          "named": true
+        },
+        {
+          "type": "value",
           "named": true
         }
       ]
@@ -34,15 +48,56 @@
     }
   },
   {
+    "type": "value",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "\n",
     "named": false
   },
   {
-    "type": "function",
-    "named": true
+    "type": "$1",
+    "named": false
   },
   {
-    "type": "keyword",
-    "named": true
+    "type": "$2",
+    "named": false
+  },
+  {
+    "type": "$5",
+    "named": false
+  },
+  {
+    "type": "&error",
+    "named": false
+  },
+  {
+    "type": "&pad",
+    "named": false
+  },
+  {
+    "type": "&read",
+    "named": false
+  },
+  {
+    "type": "&vector",
+    "named": false
+  },
+  {
+    "type": "&write",
+    "named": false
+  },
+  {
+    "type": "@Console",
+    "named": false
+  },
+  {
+    "type": "|10",
+    "named": false
+  },
+  {
+    "type": "|100",
+    "named": false
   }
 ]
