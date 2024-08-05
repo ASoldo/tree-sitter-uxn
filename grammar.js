@@ -13,6 +13,7 @@ module.exports = grammar({
     function: ($) => token(seq("@", repeat1(/[a-zA-Z0-9_-]+/))),
     subroutine_call: ($) => token(seq(";", repeat1(/[a-zA-Z0-9_-]+/))),
     value: ($) => token(seq("$", repeat1(/[a-zA-Z0-9_]+/))),
+    string: ($) => token(seq('"', repeat1(/[^"\n]+/))),
     identifier: ($) => token(seq("&", repeat1(/[a-zA-Z0-9_]+/))),
   },
 });
