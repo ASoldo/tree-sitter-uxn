@@ -127,11 +127,8 @@
             "value": "\""
           },
           {
-            "type": "REPEAT1",
-            "content": {
-              "type": "PATTERN",
-              "value": "[^\"\\n]+"
-            }
+            "type": "PATTERN",
+            "value": "[^\\s\"]+"
           }
         ]
       }

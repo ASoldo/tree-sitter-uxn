@@ -187,7 +187,8 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
       END_STATE();
     case 7:
       if (lookahead != 0 &&
-          lookahead != '\n' &&
+          (lookahead < '\t' || '\r' < lookahead) &&
+          lookahead != ' ' &&
           lookahead != '"') ADVANCE(14);
       END_STATE();
     case 8:
@@ -230,7 +231,8 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
     case 14:
       ACCEPT_TOKEN(sym_string);
       if (lookahead != 0 &&
-          lookahead != '\n' &&
+          (lookahead < '\t' || '\r' < lookahead) &&
+          lookahead != ' ' &&
           lookahead != '"') ADVANCE(14);
       END_STATE();
     case 15:
