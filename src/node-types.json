@@ -1,6 +1,6 @@
 [
   {
-    "type": "line",
+    "type": "instruction",
     "named": true,
     "fields": {},
     "children": {
@@ -8,7 +8,42 @@
       "required": true,
       "types": [
         {
-          "type": "keyword",
+          "type": "amp_instruction",
+          "named": true
+        },
+        {
+          "type": "at_instruction",
+          "named": true
+        },
+        {
+          "type": "dollar_instruction",
+          "named": true
+        },
+        {
+          "type": "function_instruction",
+          "named": true
+        },
+        {
+          "type": "pipe_instruction",
+          "named": true
+        },
+        {
+          "type": "string_instruction",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "line",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "instruction",
           "named": true
         }
       ]
@@ -34,7 +69,27 @@
     "named": false
   },
   {
-    "type": "keyword",
+    "type": "amp_instruction",
+    "named": true
+  },
+  {
+    "type": "at_instruction",
+    "named": true
+  },
+  {
+    "type": "dollar_instruction",
+    "named": true
+  },
+  {
+    "type": "function_instruction",
+    "named": true
+  },
+  {
+    "type": "pipe_instruction",
+    "named": true
+  },
+  {
+    "type": "string_instruction",
     "named": true
   }
 ]
