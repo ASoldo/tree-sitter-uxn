@@ -14,8 +14,17 @@
         {
           "type": "REPEAT1",
           "content": {
-            "type": "SYMBOL",
-            "name": "instruction"
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "keyword"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "function"
+              }
+            ]
           }
         },
         {
@@ -24,119 +33,18 @@
         }
       ]
     },
-    "instruction": {
-      "type": "CHOICE",
-      "members": [
-        {
-          "type": "SYMBOL",
-          "name": "pipe_instruction"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "at_instruction"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "amp_instruction"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "dollar_instruction"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "function_instruction"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "string_instruction"
-        }
-      ]
-    },
-    "pipe_instruction": {
+    "keyword": {
       "type": "TOKEN",
       "content": {
-        "type": "CHOICE",
-        "members": [
-          {
-            "type": "STRING",
-            "value": "|10"
-          },
-          {
-            "type": "STRING",
-            "value": "|100"
-          }
-        ]
+        "type": "STRING",
+        "value": "|10"
       }
     },
-    "at_instruction": {
+    "function": {
       "type": "TOKEN",
       "content": {
-        "type": "PATTERN",
-        "value": "@[a-zA-Z_][a-zA-Z0-9_-]*"
-      }
-    },
-    "amp_instruction": {
-      "type": "TOKEN",
-      "content": {
-        "type": "PATTERN",
-        "value": "&[a-zA-Z_][a-zA-Z0-9_-]*"
-      }
-    },
-    "dollar_instruction": {
-      "type": "TOKEN",
-      "content": {
-        "type": "PATTERN",
-        "value": "\\$[0-9]+"
-      }
-    },
-    "function_instruction": {
-      "type": "TOKEN",
-      "content": {
-        "type": "CHOICE",
-        "members": [
-          {
-            "type": "STRING",
-            "value": "&read"
-          },
-          {
-            "type": "STRING",
-            "value": "&write"
-          },
-          {
-            "type": "STRING",
-            "value": "&error"
-          },
-          {
-            "type": "STRING",
-            "value": "&pad"
-          },
-          {
-            "type": "STRING",
-            "value": "&vector"
-          }
-        ]
-      }
-    },
-    "string_instruction": {
-      "type": "TOKEN",
-      "content": {
-        "type": "PATTERN",
-        "value": "\"[^\"]*\""
-      }
-    },
-    "comment": {
-      "type": "TOKEN",
-      "content": {
-        "type": "PATTERN",
-        "value": ";.*"
-      }
-    },
-    "_comment": {
-      "type": "TOKEN",
-      "content": {
-        "type": "PATTERN",
-        "value": ";.*"
+        "type": "STRING",
+        "value": "@Console"
       }
     }
   },
