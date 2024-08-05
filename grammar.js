@@ -6,20 +6,12 @@ module.exports = grammar({
   rules: {
     source_file: ($) => repeat($.line),
 
-    line: ($) => seq(repeat1(choice($.keyword, $.function, $.value)), "\n"),
+    line: ($) =>
+      seq(repeat1(choice($.keyword, $.function, $.value, $.identifier)), "\n"),
 
-    keyword: ($) => choice(token("|10"), token("|100")),
-
-    function: ($) =>
-      choice(
-        token("@Console"),
-        token("&vector"),
-        token("&read"),
-        token("&pad"),
-        token("&write"),
-        token("&error"),
-      ),
-
-    value: ($) => choice(token("$1"), token("$2"), token("$5")),
+    keyword: ($) => token(seq("|", repeat1(/[a-zA-Z0-9_]+/))),
+    function: ($) => token(seq("@", repeat1(/[a-zA-Z0-9_]+/))),
+    value: ($) => token(seq("$", repeat1(/[a-zA-Z0-9_]+/))),
+    identifier: ($) => token(seq("&", repeat1(/[a-zA-Z0-9_]+/))),
   },
 });
